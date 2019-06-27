@@ -23,6 +23,6 @@
 hs_err_pid*
 
 # Ideas Files
-*/.idea/*
+.idea/*
 *.iml
-*/target/*
+target/*
