@@ -11,5 +11,6 @@
 
 @Table (Camera) - указание допоплнительных параметров для сущности таблицы
 @Column
+@Temporal - указание типа данных SQL
 
 А также @OneToOne, @ManyToOne, @ManyToMany (пакеты соответственно)
