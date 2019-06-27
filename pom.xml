@@ -12,6 +12,7 @@
         <module>1_configuring</module>
         <module>2_bean_lifecycle</module>
         <module>3_hibernate</module>
+        <module>4_hibernate_springdata</module>
     </modules>
 
     <build>
