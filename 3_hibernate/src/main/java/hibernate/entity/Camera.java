@@ -3,9 +3,8 @@ package hibernate.entity;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name = "cameras")
@@ -14,6 +13,10 @@ public class Camera extends AbstractEntity {
 
     @Column
     private String name;
+
+    @Column(name="published_date")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date publishedDate;
 
     public Camera() {
     }
