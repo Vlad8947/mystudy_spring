@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class OldCameraRollBFPP implements BeanFactoryPostProcessor {
 
+    @Override
     public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
 
         // Получаем имена всех BeanDefinition для доступа к каждому из них

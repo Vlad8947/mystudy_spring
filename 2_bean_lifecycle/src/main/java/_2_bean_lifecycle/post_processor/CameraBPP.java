@@ -6,11 +6,13 @@ import org.springframework.beans.factory.config.BeanPostProcessor;
 
 public class CameraBPP implements BeanPostProcessor {
 
+    @Override
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
         // В данном методе просто возвращаем бин
         return bean;
     }
 
+    @Override
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
         // Находим бин класса фотокамеры
         if(bean instanceof Camera){
