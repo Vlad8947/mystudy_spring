@@ -7,16 +7,16 @@
 </head>
 <body>
 
-    <form:form modelAttribute="human" method="post">
+    <form:form modelAttribute="human" method="post" action="${contextPath}/form">
         <form:label path="name">
             First name
         </form:label>
-        <form:input path="name" />
+        <form:input type="text" path="name" />
         </p>
         <form:label path="age">
             Age
         </form:label>
-        <form:input path="age"/>
+        <form:input type="text" path="age"/>
         </p>
         <button type="submit">Submit</button>
     </form:form>
