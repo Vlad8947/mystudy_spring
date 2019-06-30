@@ -17,16 +17,14 @@
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-core</artifactId>
-            <version>${spring.version}</version>
-        </dependency>
+        <!--context (core, beans, aop, expression)-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
             <version>${spring.version}</version>
         </dependency>
+
+        <!--NEW-->
 
         <!--@PostConstruct, @PreDestroy-->
         <dependency>
@@ -34,6 +32,8 @@
             <artifactId>jsr250-api</artifactId>
             <version>1.0</version>
         </dependency>
+
+        <!--NEW-->
     </dependencies>
 
 </project>
