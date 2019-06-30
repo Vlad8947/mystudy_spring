@@ -25,4 +25,5 @@ hs_err_pid*
 # Ideas Files
 .idea/*
 *.iml
-target/*
+*/target/*
+out/*
