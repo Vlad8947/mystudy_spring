@@ -14,6 +14,7 @@
         <module>3_hibernate</module>
         <module>4_hibernate_springdata</module>
         <module>5_mvc</module>
+        <module>6_spring-security</module>
     </modules>
 
     <build>
