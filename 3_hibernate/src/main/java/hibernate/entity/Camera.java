@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 import java.util.Date;
 
 @Entity
@@ -12,6 +13,7 @@ import java.util.Date;
 public class Camera extends AbstractEntity {
 
     @Column
+    @Size(min = 2, max = 21, message = "String is not valid")
     private String name;
 
     @Column(name="published_date")
