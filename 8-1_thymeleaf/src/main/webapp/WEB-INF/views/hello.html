@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Thymeleaf example</title>
+</head>
+<body>
+
+    <span th:text="#{welcome.message}" />
+    <span th:text="#{welcome.withName(${user})}" />
+
+</body>
+</html>

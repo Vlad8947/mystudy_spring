@@ -16,7 +16,8 @@
         <module>5_mvc</module>
         <module>6_spring-security</module>
         <module>7_spring-boot</module>
-        <module>8_thymeleaf</module>
+        <module>8-2_thymeleaf-starter</module>
+        <module>8-1_thymeleaf</module>
     </modules>
 
     <build>
