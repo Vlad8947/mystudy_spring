@@ -7,11 +7,20 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import ru.vlad.thymeleaf.model.User;
 
+import java.util.List;
+
 @Controller
 @RequestMapping("/hello")
 public class HelloController {
 
+    private List<Object> list;
+
     public HelloController() {
+    }
+
+    @ModelAttribute
+    public List<Object> getList() {
+        return list;
     }
 
     @GetMapping
