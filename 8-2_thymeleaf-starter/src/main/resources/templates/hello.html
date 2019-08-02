@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Thymeleaf example</title>
+</head>
+<body>
+
+    <span th:name="#{welcome.message}" />
+    <span th:name="#{welcome.withName(${user.name})}" />
+
+    <table>
+        <tr th:each="item: ${items}">
+            <td th:name="${item.header}"/>
+            <td th:name="${item.text}"/>
+        </tr>
+    </table>
+
+    <form action="#" th:action="@{/hello/form}" th:object="${item}" method="post">
+        <input type="text" th:field="*{header}" />
+        <p th:if="${#fields.hasErrors('header')}" th:errors="*{header}" th:errorclass="error">Incorrect date</p>
+
+        <input type="text" th:field="*{text}" />
+    </form>
+
+    <ul>
+        <li th:each="err : ${#fields.errors('all')}" th:text="${err}" />
+    </ul>
+
+
+
+
+</body>
+</html>

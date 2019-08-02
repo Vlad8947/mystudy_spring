@@ -20,7 +20,7 @@
     <properties>
         <java.version>1.8</java.version>
         <!--NEW-->
-        <thymeleaf.version>3.0.6.RELEASE</thymeleaf.version>
+        <!--<thymeleaf.version>3.0.6.RELEASE</thymeleaf.version>-->
         <thymeleaf-layout-dialect.version>2.2.2</thymeleaf-layout-dialect.version>
         <!--NEW-->
     </properties>
@@ -54,6 +54,12 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <scope>runtime</scope>
+            <optional>true</optional>
+        </dependency>
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
