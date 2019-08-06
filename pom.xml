@@ -18,6 +18,7 @@
         <module>7_spring-boot</module>
         <module>8-2_thymeleaf-starter</module>
         <module>8-1_thymeleaf</module>
+        <module>9_spel_aop</module>
     </modules>
 
     <build>
