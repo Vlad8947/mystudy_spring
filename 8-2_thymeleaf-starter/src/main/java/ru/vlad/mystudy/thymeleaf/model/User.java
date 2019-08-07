@@ -3,6 +3,7 @@ package ru.vlad.mystudy.thymeleaf.model;
 public class User {
 
     private String name;
+    public String role;
 
     public User() {
     }
