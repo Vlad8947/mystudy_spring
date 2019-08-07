@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Assert</title>
+</head>
+<body>
+
+    <div th:fragment="employee (firstName, lastName)" class="box"
+         th:assert= "${!#strings.isEmpty(firstName)}, ${!#strings.isEmpty(lastName)}">
+
+        <p>First Name: <span th:utext="${firstName}"></span></p>
+        <p>Last Name: <span th:utext="${lastName}"></span></p>
+        <p>Full Name: <span th:utext="${firstName} + ' '+ ${lastName}"></span></p>
+    </div>
+
+</body>
+</html>
