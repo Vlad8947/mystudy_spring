@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Each with class-append</title>
+</head>
+<body>
+
+    <table border="1">
+        <tr>
+            <th>No</th>
+            <th>Phone</th>
+            <th>Full Name</th>
+            <th>Email</th>
+        </tr>
+
+        <tr th:each="mapItem, state : ${contacts}"
+            class="row" th:classappend="${state.odd} ? 'odd-row' : 'even-row'">
+
+            <td th:utext="${state.count}">No</td>
+            <td th:utext="${mapItem.key}">Phone Number</td>
+            <td th:utext="${mapItem.value.fullName}">Email</td>
+            <td th:utext="${mapItem.value.email}">Email</td>
+        </tr>
+    </table>
+
+</body>
+</html>

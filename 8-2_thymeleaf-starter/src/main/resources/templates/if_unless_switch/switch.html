@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Switch</title>
+</head>
+<body>
+
+    <h1>tth:witch/th:case</h1>
+
+    <h4 th:utext="${user.name}"></h4>
+
+    <div th:switch="${user.role}">
+        <p th:case="'admin'">User is an administrator</p>
+        <p th:case="'manager'">User is a manager</p>
+        <p th:case="'staff'">User is a staff</p>
+        <p th:case="*">User is some other thing</p>
+    </div>
+
+</body>
+</html>

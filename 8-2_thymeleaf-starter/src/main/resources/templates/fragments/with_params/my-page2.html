@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <div th:replace="~{fragments/with_params/my-template2 :: person('Donald', 'Trump') }"></div>
+
+    <div th:replace="~{fragments/with_params/my-template2 :: person( firstName='Donald', lastName= 'Trump') }"></div>
+
+    <div th:replace="~{fragments/with_params/my-template2 :: person( ${u.firstName}, ${u.lastName}) }"></div>
+
+    <div th:replace="~{fragments/with_params/my-template2 :: person( firstName=${u.firstName}, lastName= ${u.lastName}) }"></div>
+
+
+    <div th:replace="~{fragments/with_params/my-template2 :: greeting(title='Mr.', name = 'Tom') }"></div>
+
+    <div th:replace="~{fragments/with_params/my-template2 :: greeting }"></div>
+
+</body>
+</html>
