@@ -21,6 +21,7 @@
 6) В мавене выполните "clean package" для пересборки проекта.
 
 7) Открываем pom.xml и добавляем пару плагинов. Не забываем смотреть актуальность плагинов, менять версии указанных NodeJs и npm, директории ресурсов.
+В плагине ресурсов присутствует фильтрация, поэтому там прописаны расширения файлов, которые поганить не надо!
 			
 			<properties>
 				<frontend-maven-plugin.version>1.7.6</frontend-maven-plugin.version>
@@ -97,6 +98,11 @@
 	                                    <filtering>true</filtering>
 	                                </resource>
 	                            </resources>
+	                            <nonFilteredFileExtensions>
+                                    <nonFilteredFileExtension>ttf</nonFilteredFileExtension>
+                                    <nonFilteredFileExtension>woff</nonFilteredFileExtension>
+                                    <nonFilteredFileExtension>woff2</nonFilteredFileExtension>
+                                </nonFilteredFileExtensions>
 	                        </configuration>
 	                    </execution>
 	                </executions>
