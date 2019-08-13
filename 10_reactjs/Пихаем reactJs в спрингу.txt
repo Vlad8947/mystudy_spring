@@ -1,0 +1,111 @@
+1) Устанавливаем NodeJs lts (проверяем npm -v)
+	Можно ещё поставить yarn (проверка yarn -v)
+
+2) Создаем типичный проект на Spring- Boot
+
+3) В папке, где должен находится пакет с фронтом, открываем command-line и вбиваем 
+	npx create-react-app reactfrontend
+	где "reactfrontend" - это название пакета для фронта
+	Генерятся файлы.
+
+4) Переходим в пакет с фронтом и вбиваем строку
+	npm start
+
+	Должен запуститься браузер и показать на порту 3000 окно реакта.
+
+5) Там же 
+	npm run build
+
+	В пакете появился пакет build
+
+6) В мавене выполните "clean package" для пересборки проекта.
+
+7) Открываем pom.xml и добавляем пару плагинов. Не забываем смотреть актуальность плагинов, менять версии указанных NodeJs и npm, директории ресурсов.
+			
+			<properties>
+				<frontend-maven-plugin.version>1.7.6</frontend-maven-plugin.version>
+        		<node.version>v10.16.2</node.version>
+		        <npm.version>6.9.0</npm.version>
+		        <frontend-maven-plugin.workingDirectory>src/main/reactfrontend</frontend-maven-plugin.workingDirectory>
+		        <maven-resources-plugin.resourceDirectory>src/main/reactfrontend/build</maven-resources-plugin.resourceDirectory>
+		        <maven-resources-plugin.outputDirectory>target/classes/static</maven-resources-plugin.outputDirectory>
+			</properties> 
+
+			<plugins>
+
+				<plugin>
+	                <groupId>com.github.eirslett</groupId>
+	                <artifactId>frontend-maven-plugin</artifactId>
+	                <version>${frontend-maven-plugin.version}</version>
+
+	                <executions>
+	                    <execution>
+	                        <id>Install node and npm</id>
+	                        <goals>
+	                            <goal>install-node-and-npm</goal>
+	                        </goals>
+	                        <phase>generate-resources</phase>
+	                        <configuration>
+	                            <nodeVersion>${node.version}</nodeVersion>
+	                            <npmVersion>${npm.version}</npmVersion>
+	                        </configuration>
+	                    </execution>
+
+	                    <execution>
+	                        <id>npm install</id>
+	                        <goals>
+	                            <goal>npm</goal>
+	                        </goals>
+	                        <phase>generate-resources</phase>
+	                        <configuration>
+	                            <arguments>install</arguments>
+	                        </configuration>
+	                    </execution>
+
+	                    <execution>
+	                        <id>npm build</id>
+	                        <goals>
+	                            <goal>npm</goal>
+	                        </goals>
+	                        <phase>generate-resources</phase>
+	                        <configuration>
+	                            <arguments>run build</arguments>
+	                        </configuration>
+	                    </execution>
+	                </executions>
+	                <configuration>
+	                    <nodeVersion>${node.version}</nodeVersion>
+	                    <workingDirectory>${frontend-maven-plugin.workingDirectory}</workingDirectory>
+	                </configuration>
+	            </plugin>
+
+	            <plugin>
+	                <groupId>org.apache.maven.plugins</groupId>
+	                <artifactId>maven-resources-plugin</artifactId>
+	                <executions>
+	                    <execution>
+	                        <id>Copy my react app into my Spring Boot target static folder</id>
+	                        <phase>process-resources</phase>
+	                        <goals>
+	                            <goal>copy-resources</goal>
+	                        </goals>
+	                        <configuration>
+	                            <outputDirectory>${maven-resources-plugin.outputDirectory}</outputDirectory>
+	                            <resources>
+	                                <resource>
+	                                    <directory>${maven-resources-plugin.resourceDirectory}</directory>
+	                                    <filtering>true</filtering>
+	                                </resource>
+	                            </resources>
+	                        </configuration>
+	                    </execution>
+	                </executions>
+	            </plugin>
+
+	        </plugins>  
+
+8) clean package
+
+9) Запускаем сервак и проверяем index.html (http://localhost:8080/index.html).
+	
+	Готово! =)
