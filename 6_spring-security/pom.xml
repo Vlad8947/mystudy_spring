@@ -12,7 +12,7 @@
     <artifactId>6_spring-security</artifactId>
 
     <properties>
-        <spring.version>5.0.9.RELEASE</spring.version>
+        <spring.version>6.0.0</spring.version>
         <hibernate.version>5.2.4.Final</hibernate.version>
     </properties>
 
